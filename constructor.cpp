@@ -12,6 +12,9 @@ class Entity{
             X=x;
             Y=y;
         }
+        ~Entity(){
+            std::cout<<"Destroyed"<<std::endl;
+        }
 };
 
 /*class Log{
@@ -25,9 +28,9 @@ int main() {
     Entity e;
     std::cout<<"X: "<<e.X<<" Y: "<<e.Y<<std::endl;
     Entity e2(5.0f,6.0f);
-    std::cout<<"X: "<<e2.X<<" Y: "<<e2.Y<<
+    std::cout<<"X: "<<e2.X<<" Y: "<<e2.Y<<std::endl;
+    e.~Entity();
     std::cin.get();
-
 
     //Log::write("Hello");
     //Log l;happens due to default constructor
