@@ -1,7 +1,7 @@
 #include <iostream>
 class Entity{
     public:
-    std::string GetName(){
+    virtual std::string GetName(){
         return "Entity";
     }
 };
@@ -12,7 +12,7 @@ class Player :public Entity{
     public:
     Player(const  std::string& name): m_Name(name){}
 
-    std::string GetName(){
+    std::string GetName() override{
         return m_Name;
     }
 };
@@ -22,5 +22,8 @@ int main() {
 
     Player* p=new Player("Aniketh");
     std::cout<<p->GetName()<<std::endl;
+
+    Entity* entity=p;
+    std::cout<<entity->GetName()<<std::endl;
     std::cin.get();
 }
