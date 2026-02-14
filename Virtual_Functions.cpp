@@ -12,7 +12,7 @@ class Player :public Entity{
     public:
     Player(const  std::string& name): m_Name(name){}
 
-    std::string GetName() override{
+    std::string GetName() {
         return m_Name;
     }
 };
